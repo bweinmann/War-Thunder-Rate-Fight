@@ -10,7 +10,7 @@ War Thunder Rate Fight is a discussion platform for reviewing aircraft within Wa
 
 ## Technical architecture
 
-[Frontend](https://whimsical.com/W9tY9WosB2puQb81E2zRFo) and [Backend](https://whimsical.com/couch-working-5z7fpHtMBA94BiigcXNXBX)
+[Frontend](https://whimsical.com/W9tY9WosB2puQb81E2zRFo) and [Backend](https://app.diagrams.net/)
 
 ## API
 
@@ -66,18 +66,5 @@ Option to add new aircraft for users
 
 | Component                                                                               | Priority | Estimated Time | Time Invested | Actual Time |
 | --------------------------------------------------------------------------------------- | :------: | :------------: | :-----------: | :---------: |
-| [Proposal](https://github.com/timhausweiler/p3-couchworking/issues/1)                   |    H     |       2        |       2       |      2      |
-| [Github setup (backend)](https://github.com/timhausweiler/p3-couchworking/issues/2)     |    H     |       1        |       1       |      1      |
-| [MongoDB setup](https://github.com/timhausweiler/p3-couchworking/issues/3)              |    H     |      0.5       |      0.5      |     0.5     |
-| [Create backend routes](https://github.com/timhausweiler/p3-couchworking/issues/4)      |    H     |      2       |      2      |     2     |
-| [Create backend controllers](https://github.com/timhausweiler/p3-couchworking/issues/5) |    H     |      5       |      5      |     5     |
-| [Deploy backend](https://github.com/timhausweiler/p3-couchworking/issues/6)             |    H     |      0.5       |      0.5      |     0.5     |
-| [Github setup (frontend)](https://github.com/timhausweiler/p3-couchworking/issues/17)   |    H     |      tbd       |      tbd      |     tbd     |
-| [Create React app](https://github.com/timhausweiler/p3-couchworking/issues/11)          |    H     |      tbd       |      tbd      |     tbd     |
-| [CRUD requests / API calls](https://github.com/timhausweiler/p3-couchworking/issues/12) |    H     |      tbd       |      tbd      |     tbd     |
-| [Authentication](https://github.com/timhausweiler/p3-couchworking/issues/13)            |    H     |      2       |      2      |     2     |
-| [Build screens](https://github.com/timhausweiler/p3-couchworking/issues/14)             |    H     |      tbd       |      tbd      |     tbd     |
-| [Styling](https://github.com/timhausweiler/p3-couchworking/issues/15)                   |    H     |      tbd       |      tbd      |     tbd     |
-| [Deploy frontend](https://github.com/timhausweiler/p3-couchworking/issues/16)           |    H     |      tbd       |      tbd      |     tbd     |
-| Bugfixes                                                                                |    H     |      tbd       |      tbd      |     tbd     |
+| [Proposal](https://github.com/timhausweiler/p3-couchworking/issues/1)                   |    H     |       2        |       2       Bugfixes                                                                                |    H     |      tbd       |      tbd      |     tbd     |
 | Total                                                                                   |    H     |      tbd       |      tbd      |     tbd     |
