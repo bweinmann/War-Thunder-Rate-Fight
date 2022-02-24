@@ -12,23 +12,14 @@ War Thunder Rate Fight is a discussion platform for reviewing aircraft within Wa
 
 [Frontend](https://whimsical.com/W9tY9WosB2puQb81E2zRFo) and [Backend](https://app.diagrams.net/)
 
-## API
+##  Libraries and Dependencies
+  This project will be a React frontend, Ruby on Rails backend
 
-MongoDB with two collections:
-
-1. User collection with the following schema:
-
-- userName
-- password
-- firstName
-- lastName
-- email
-
-2. War Thunder Rate Fights collection with the following schema:
-
-- title
-- description
-- rating
+| Library |	Description |
+| React |	A javascript library |
+| React Router |	A router package to be used with react  |
+| Tails Winds |	A styling package |
+| Ruby on Rails |	Backend library for SQL database  |
 
 
 ## MVP/PostMVP
@@ -64,7 +55,21 @@ Option to add new aircraft for users
 
 ## Timeframes
 
-| Component                                                                               | Priority | Estimated Time | Time Invested | Actual Time |
-| --------------------------------------------------------------------------------------- | :------: | :------------: | :-----------: | :---------: |
-| [Proposal](https://github.com/timhausweiler/p3-couchworking/issues/1)                   |    H     |       2        |       2       Bugfixes                                                                                |    H     |      tbd       |      tbd      |     tbd     |
-| Total                                                                                   |    H     |      tbd       |      tbd      |     tbd     |
+|Component |
+| Priority | Estimated Time | Time Invested | Actual Time |
+| :------: | :------------: | :-----------: | :---------: |
+| Create Rails app  |	L	 | .5 hrs |	2 hrs |	3 hrs |
+| Scaffold models and tables  |	H |	3 hrs |	1 hrs |	TBD |
+| Add routes and model relations  |	H |	2 hrs |	1 hrs |	TBD |
+| Testing in postman  |	H |	3 hrs |	1 hrs |	TBD
+| Deploy to heroku  |	H |	2 hrs |	1 hrs |	TBD
+| Create React app  |	H |	2 hrs |	1 hrs |	TBD
+| Create file structure |	H |	2.5 hrs |	1 hrs |	TBD
+| Create some UI  |	H |	1.5 hrs |	2 hrs |	TBD
+| create api files  |	H |	2 hrs |	2 hrs |	TBD
+| Create container and user data  |	H |	5 hrs |	1 hrs |	TBD
+| Create forms  |	H |	2.5 hrs |	1 hrs |	TBD
+| React routing to different pages  |	H |	2 hrs |	1 hrs |	TBD
+| Create profile and stories  |	H |  5 hrs  |	1 hrs |	TBD
+| Deploy and style  |	H |	8 hrs |	5 hrs |	TBD
+| TOTAL |	50 hrs  |	3 hrs |	TBD
