@@ -1,11 +1,17 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: %i[ show update destroy ]
+  before_action :authorize_request, only: [:create, :update, :destroy, :get_user_reviews]
 
   # GET /reviews
   def index
     @reviews = Review.all
 
     render json: @reviews
+  end
+
+  def get_user_reviews
+    @user = User.find(params[user_id])
+    render json: @user.reviews
   end
 
   # GET /reviews/1
@@ -16,6 +22,8 @@ class ReviewsController < ApplicationController
   # POST /reviews
   def create
     @review = Review.new(review_params)
+    @review.user = @current_user
+    @review.aircraft_id = params[:aircraft_id]
 
     if @review.save
       render json: @review, status: :created, location: @review
