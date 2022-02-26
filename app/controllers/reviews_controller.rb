@@ -4,7 +4,8 @@ class ReviewsController < ApplicationController
 
   # GET /reviews
   def index
-    @reviews = Review.all
+    @aircraft = Aircraft.find(params[:aircraft_id])
+    @reviews = @aircraft.reviews
 
     render json: @reviews
   end

@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[ show update destroy ]
-  before_action :set_comment, only: [:create, :update. :destroy]
+  before_action :set_comment, only: [:create, :update, :destroy]
 
   # GET /comments
   def index
@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.user = @current_user
-    @comment.review_id = params[:post_id]
+    @comment.review_id = params[:review_id]
 
     if @comment.save
       render json: @comment, status: :created, location: @comment

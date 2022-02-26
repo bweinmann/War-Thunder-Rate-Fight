@@ -16,6 +16,7 @@ class AircraftsController < ApplicationController
   # POST /aircrafts
   def create
     @aircraft = Aircraft.new(aircraft_params)
+    @aircraft.review_id = params[:review_id]
 
     if @aircraft.save
       render json: @aircraft, status: :created, location: @aircraft
