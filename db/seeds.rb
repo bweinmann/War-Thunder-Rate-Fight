@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-aircrafts = Aircraft.create ([
+aircrafts = Aircraft.create! ([
     {
     name: "P-51-D30", 
     image_url: "https://static.warthunder.com/upload/image/!%202015%20NEWS/April/Wetmore/shot%202015_04_24%2019_16_42.jpg"
@@ -32,7 +32,7 @@ aircrafts = Aircraft.create ([
     image_url: "https://static.warthunder.com/upload/image/!%202014%20NEWS/December/Yak3/ZKYYY_(5375366326).jpg"
     },
 
-reviews = Review.create ([
+reviews = Review.create! ([
     {
     title: 'Awesome Plane',
     description: 'Great energy retension. Pretty fast, perfect for boom and zoom tactics.',
