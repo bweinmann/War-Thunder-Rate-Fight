@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
-  resources :users
 
-  resources :aircrafts 
-  resources :reviews 
-  resources :comments
+  resources :users do
+    resources :review
+    resources :comment
+  end
+
+  resources :reviews do
+    resources :comments 
+  end
+
+  get '/user/user_id/reviews', to:"reviews#get_user_reviews"
 
   post '/auth/login', to: 'authentication#login'
   get '/auth/verify', to: 'authentication#verify'

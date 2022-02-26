@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show update destroy]
   before_action :authorize_request, only: [:update, :destroy]
+  before_action :set_user, only: %i[show update destroy]
 
   # GET /users
   def index
@@ -41,6 +41,10 @@ class UsersController < ApplicationController
   # DELETE /users/1
   def destroy
     @user.destroy
+    render json: {
+      user: @user,
+      message: 'Successfully deleted User'
+    }
   end
 
   private
