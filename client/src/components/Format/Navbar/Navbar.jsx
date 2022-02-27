@@ -1,6 +1,6 @@
 import { Navbar, Nav } from "react-bootstrap"
 import { Link } from "react-router-dom"
-import "./NavBar.css"
+import "./Navbar.css"
 import Login from "../../Forms/Login"
 
 const newUserLinks = (
@@ -14,7 +14,7 @@ const newUserLinks = (
 
 const NavContainer = ({user}) => {
   return (
-    <Navbar collapseOnSelect bg="light" expand="md" sticky="top" fixed="top">
+    <Navbar collapseOnSelect expand="md" sticky="top" fixed="top">
       <Navbar.Brand href="/">
         <img src="../../assets/emojisky.com-5722599.png" width="40" height="40" alt="war thunder rate fight logo" /> War Thunder Rate Fight
       </Navbar.Brand>

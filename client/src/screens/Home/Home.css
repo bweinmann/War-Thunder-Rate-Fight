@@ -2,7 +2,7 @@
     display: flex;
     width: 100vw;
     height: 100vh;
-    background-color: red;
+    /* background-color: red; */
 }
 
  .home-button-left {
@@ -15,9 +15,11 @@
 
 .home-button-right, .home-button-left {
     background-repeat:no-repeat;
-    background-position: left;
     background-size: cover;
+    background-position: center;
     color: black;
+	-webkit-text-stroke: .5px black;
+	-webkit-text-fill-color: white;
     cursor: pointer;
     font-size: 4vw;
     border: 0px;

@@ -1,11 +1,11 @@
 import "./Home.css"
-import Display from "../../components/Display/Display"
+import Layout from "../../components/Format/Layout/Layout"
 import {Link} from "react-router-dom"
 
 export default function HomePage(props) {
   return (
     <div>
-      <Display user={props.user}>
+      <Layout user={props.user}>
         <div className="home-container">
           <div className="home-container-left">
             <Link to="/reviews" style={{textDecoration: "none"}}>
@@ -18,7 +18,7 @@ export default function HomePage(props) {
             </Link>
           </div>
         </div>
-      </Display>
+      </Layout>
     </div>
   )
 }

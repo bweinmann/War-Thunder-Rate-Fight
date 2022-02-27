@@ -1,5 +1,5 @@
 import "./Layout.css";
-import NavContainer from "../NavContainer/NavContainer";
+import NavContainer from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 
 const Layout = (props) => {

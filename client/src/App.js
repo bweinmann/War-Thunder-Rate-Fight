@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import {loginUser, verifyUser } from './services/User'
-import userInfo from './screens/User/UserInfo';
+// import userInfo from './screens/User/UserInfo';
 import SignUp from './screens/User/SignUp';
-import Layout from './components/Format/Layout'
+import Layout from './components/Format/Layout/Layout'
 import Login from './components/Forms/Login';
 // import Info from './'
 import Home from './screens/Home/Home';
@@ -42,15 +42,14 @@ const [logging,setLogging]=useState(false);
 
   return (
     <div className="App">
-          <Layout>
+      <Layout>
         <Routes>
-          <Route path="/" element={<Home>Testing</Home>} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login setCurrentUser={setCurrentUser} currentUser={currentUser} setInput={setInput} input={input} setLogging={setLogging}></Login>} />
           {/* <Route path="/userInfo" element={<Info currentUser={currentUser} />} /> */}
           <Route path="/signup" element={<SignUp currentUser={currentUser}/>}/>
         </Routes>
       </Layout>
-      <footer>Contact Us</footer>
     </div>
   );
 }
