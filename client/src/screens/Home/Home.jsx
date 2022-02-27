@@ -8,7 +8,7 @@ export default function HomePage(props) {
       <Layout user={props.user}>
         <div className="home-container">
           <div className="home-container-left">
-            <Link to="/reviews" style={{textDecoration: "none"}}>
+            <Link to="/aircraft" style={{textDecoration: "none"}}>
               <button className="home-button-left">View Reviews</button>
             </Link>
           </div>

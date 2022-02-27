@@ -5,6 +5,7 @@ import {loginUser, verifyUser } from './services/User'
 import SignUp from './screens/User/SignUp';
 import Layout from './components/Format/Layout/Layout'
 import Login from './components/Forms/Login';
+import AircraftList from './screens/AircraftList/AircraftList'
 // import Info from './'
 import Home from './screens/Home/Home';
 
@@ -46,6 +47,7 @@ const [logging,setLogging]=useState(false);
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login setCurrentUser={setCurrentUser} currentUser={currentUser} setInput={setInput} input={input} setLogging={setLogging}></Login>} />
+          <Route path="/aircraft" element={<AircraftList />} />
           {/* <Route path="/userInfo" element={<Info currentUser={currentUser} />} /> */}
           <Route path="/signup" element={<SignUp currentUser={currentUser}/>}/>
         </Routes>
