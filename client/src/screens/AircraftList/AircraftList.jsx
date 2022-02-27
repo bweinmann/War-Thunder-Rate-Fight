@@ -9,6 +9,7 @@ const baseURL = "localhost:3000"
 
 export default function AircraftList() {
   const [aircrafts, setAircrafts] = useState([])
+  const [searchParams]
 
   useEffect(() => {
     const fetchAircraft = async () => {
