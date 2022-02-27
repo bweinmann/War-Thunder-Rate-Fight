@@ -24,3 +24,18 @@ export const verifyUser = async () => {
   }
   return false
 }
+
+export const getAllUsers = async () => {
+    const resp = await api.get('/users')
+    return resp.data
+  }
+   
+  export const updateUser = async (user_id, updateData) => {
+    const resp = await api.put(`/users/${user_id}`, {user: updateData})
+    return resp.data
+  }
+  
+  export const deleteUser = async (user_id) => {
+    const resp = await api.delete(`/users/${user_id}`)
+    return resp.data
+  }
