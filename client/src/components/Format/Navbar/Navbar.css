@@ -1,0 +1,23 @@
+.navbar-brand {
+    margin-left: 30px;
+    font-size: 30px;
+  }
+  
+  .show {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .nav-link {
+    margin: 20px;
+    color: red;
+  }
+  
+  .fixed-top {
+  position: fixed;
+  }
+  
+  a.link.nav-link:hover {
+      color:#C9B576; 
+      border-bottom: 1.2px solid #C9B576;
+  }

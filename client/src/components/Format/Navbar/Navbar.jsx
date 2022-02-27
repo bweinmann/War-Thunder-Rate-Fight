@@ -14,16 +14,14 @@ const newUserLinks = (
 
 const NavContainer = ({user}) => {
   return (
-    <Navbar collapseOnSelect expand="md" sticky="top" fixed="top">
+    <Navbar collapseOnSelect className="text-white" bg="dark" expand="md" sticky="top" fixed="top">
       <Navbar.Brand href="/">
-        <img src="../../assets/emojisky.com-5722599.png" width="40" height="40" alt="war thunder rate fight logo" /> War Thunder Rate Fight
-      </Navbar.Brand>
+        <img src="../../assets/emojisky.com-5722599.png" width="40" height="40"/> War Thunder Rate Fight
+      </Navbar.Brand >
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          {/* {user && <div className="user-link">Hello {user.username}</div>} */}
           {newUserLinks}
-          {/* {user ? userLinks : newUserLinks}      */}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
