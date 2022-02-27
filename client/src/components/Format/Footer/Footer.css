@@ -1,0 +1,32 @@
+.social-link {
+    font-size: 1.5em;
+    color: #C9B576;
+    text-decoration: none;
+    -ms-transition:all .5s ease-in;
+    -webkit-transition:all .5s ease-in;
+    transition:all .5s ease-in;
+    padding: .6em;
+    font-size: .3vw;
+    margin-bottom: 10px;
+  }
+  .social-link:hover { 
+      color: #767A3A; 
+      border-bottom: 1.2px solid #767A3A;
+  } 
+  
+  .main-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #C9B576;
+    background-color: #3A3A3A;
+  }
+  
+  h4 {
+    font-size: .6vw;
+    padding: .1vw;
+  }
+  
+  h4.footer-header {
+    font-size: 1vw;
+  }
