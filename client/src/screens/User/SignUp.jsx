@@ -11,7 +11,7 @@ const default_User = {
   confirmPassword: "",
 }
 
-const baseURL = "https://couch-working.herokuapp.com/"
+const baseURL = "localhost:3000"
 
 const UserSignUp = () => {
   const [newUser, setNewUser] = useState(default_User)

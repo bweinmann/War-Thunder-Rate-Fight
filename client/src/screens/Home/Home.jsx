@@ -1,4 +1,4 @@
-import "./HomePage.css"
+import "./Home.css"
 import Display from "../../components/Display/Display"
 import {Link} from "react-router-dom"
 
