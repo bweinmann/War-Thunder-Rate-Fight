@@ -1,8 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import userInfo from './screens/User/UserInfo'
-import Signup from './screens/Users/Signup';
+import {loginUser, verifyUser } from './services/User'
+import userInfo from './screens/User/UserInfo';
+import SignUp from './screens/User/SignUp';
+import Layout from './components/Format/Layout'
 import Login from './components/Forms/Login';
+// import Info from './'
 import Home from './screens/Home/Home';
 
 import './App.css';
@@ -43,8 +46,8 @@ const [logging,setLogging]=useState(false);
         <Routes>
           <Route path="/" element={<Home>Testing</Home>} />
           <Route path="/login" element={<Login setCurrentUser={setCurrentUser} currentUser={currentUser} setInput={setInput} input={input} setLogging={setLogging}></Login>} />
-          <Route path="/userInfo" element={<Info currentUser={currentUser} />} />
-          <Route path="/signup" element={<Signup currentUser={currentUser}></Signup>}/>
+          {/* <Route path="/userInfo" element={<Info currentUser={currentUser} />} /> */}
+          <Route path="/signup" element={<SignUp currentUser={currentUser}/>}/>
         </Routes>
       </Layout>
       <footer>Contact Us</footer>
@@ -54,11 +57,3 @@ const [logging,setLogging]=useState(false);
 
 export default App;
 
-  return (
-    <div className="App">
-     
-    </div>
-  );
-}
-
-export default App;
