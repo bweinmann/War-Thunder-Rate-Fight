@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../../services/User'
+import Button from 'react-bootstrap/Button'
 
 export default function Login(props) {
   const [input, setInput] = useState({
@@ -29,12 +30,50 @@ export default function Login(props) {
   }
 
   return (
-    <form onSubmit={(e) => { handleSubmit(e) }}>
-      <label>Username</label>
-      <input name="username" placeholder="username" onChange={(e) => { handleChange(e) }} />
-      <label>Password</label>
-      <input name="password" placeholder="password" onChange={(e) => { handleChange(e) }} />
-      <button>Submit</button>
-    </form>
+    <div>
+      <Button
+        className="signin-button"
+        onClick={(e) => {
+          toggleClass(e)
+        }}
+        variant="light"
+      >
+        Sign In
+      </Button>
+
+      <div className="form-container">
+
+        <form
+          onSubmit={(e) => {
+            handleSubmit(e)
+          }}
+        >   
+          <fieldset className={field}>
+            <legend className="legend1">Sign In</legend>
+            <input
+              name="username"
+              value={user.username}
+              placeholder="username"
+              onChange={(e) => {
+                handleTextInput(e)
+              }}
+            ></input>
+            <br />
+            <input
+              name="password"
+              value={user.password}
+              placeholder="password"
+              onChange={(e) => {
+                handleTextInput(e)
+              }}
+            ></input>
+            <br />
+            <Button type="submit" variant="dark">
+              Sign In
+            </Button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
   )
 }
