@@ -1,4 +1,4 @@
-import { api } from './apiconfig.js'
+import { api } from './api-helper.js'
 
 
 export const getAllComments = async (review_id) => {
