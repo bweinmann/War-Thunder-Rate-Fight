@@ -1,7 +1,7 @@
 import { Navbar, Nav } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import "./Navbar.css"
-import Login from "../../Forms/Login"
+import Login from "../../Forms/Login/Login"
 
 const newUserLinks = (
   <div className="nav-links mr-auto" style={{display: "flex"}}>

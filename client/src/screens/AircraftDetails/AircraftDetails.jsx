@@ -6,7 +6,7 @@ import {useParams, useNavigate} from "react-router-dom"
 
 
 
-export default function CouchDetail(props) {
+export default function AircraftDetail(props) {
 
   const [aircraft, setAircraft] = useState(null)
   const {id} = useParams()
@@ -14,15 +14,15 @@ export default function CouchDetail(props) {
   const username = localStorage.getItem("username")
   const navigate = useNavigate()
   useEffect(() => {
-    const fetchCouch = async () => {
+    const fetchAircraft = async () => {
       const res = await axios.get(URL, {
         headers: {
           Authorization: `${localStorage.getItem("token")}`,
         },
       })
-      setCouch(res.data)
+      setAircraft(res.data)
     }
-    fetchCouch()
+    fetchAircraft()
   }, [id])
   
   return (

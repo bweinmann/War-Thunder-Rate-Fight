@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import {loginUser, verifyUser } from './services/User'
-import SignUp from './screens/User/SignUp';
+import SignUp from './components/Forms/SignUp/SignUp';
 import Layout from './components/Format/Layout/Layout';
-import Login from './components/Forms/Login';
+import Login from './components/Forms/Login/Login';
 import AircraftList from './screens/AircraftList/AircraftList';
 import AircraftDetails from './screens/AircraftDetails/AircraftDetails'
 import Home from './screens/Home/Home';
