@@ -1,5 +1,5 @@
 import {useNavigate} from "react-router-dom";
-import { registerUser } from '../../services/User'
+import { registerUser } from '../../../services/User'
 import { useState } from "react";
 // import Button from "react-bootstrap/Button";
 // import Layout from "../../components/Format/Layout/Layout";
