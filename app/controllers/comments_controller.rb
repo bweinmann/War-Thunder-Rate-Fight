@@ -1,17 +1,22 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: %i[ show update destroy ]
-  before_action :set_comment, only: [:create, :update, :destroy]
+  before_action :set_review, only: %i[ show update destroy ]
+  before_action :authorize_request, only: [:create, :update, :destroy, :get_user_comments]
 
   # GET /comments
   def index
     @review = Review.find(params[:review_id])
     @comments = @review.comments
 
-    render json: @comments include :user
+    render json: @comments, include: :user
   end
 
   def get_all_comments
     @comments = Comment.all
+  end
+
+  def get_user_comments
+    @user = User.find(params[user_id])
+    render json: @user.comments
   end
 
   # GET /comments/1
@@ -26,7 +31,7 @@ class CommentsController < ApplicationController
     @comment.review_id = params[:review_id]
 
     if @comment.save
-      render json: @comment, status: :created, location: @comment
+      render json: @comment, status: :created
     else
       render json: @comment.errors, status: :unprocessable_entity
     end
