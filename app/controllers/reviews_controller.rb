@@ -4,13 +4,16 @@ class ReviewsController < ApplicationController
 
   # GET /reviews
   def index
-    # @aircraft = Aircraft.find(params[:aircraft_id])
-    # @reviews = @aircraft.reviews
-    @reviews = Review.all
+    @aircraft = Aircraft.find(params[:aircraft_id])
+    @reviews = @aircraft.reviews
 
-    render json: @reviews
+    render json: @reviews, include :user
   end
 
+  def get_all_reviews
+    @reviews = Review.all
+  end
+  
   def get_user_reviews
     @user = User.find(params[user_id])
     render json: @user.reviews

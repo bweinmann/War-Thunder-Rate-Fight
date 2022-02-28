@@ -4,9 +4,14 @@ class CommentsController < ApplicationController
 
   # GET /comments
   def index
-    @comments = Comment.all
+    @review = Review.find(params[:review_id])
+    @comments = @review.comments
 
-    render json: @comments
+    render json: @comments include :user
+  end
+
+  def get_all_comments
+    @comments = Comment.all
   end
 
   # GET /comments/1
