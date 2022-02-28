@@ -1,12 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import {loginUser, verifyUser } from './services/User'
-// import userInfo from './screens/User/UserInfo';
 import SignUp from './screens/User/SignUp';
-import Layout from './components/Format/Layout/Layout'
+import Layout from './components/Format/Layout/Layout';
 import Login from './components/Forms/Login';
-import AircraftList from './screens/AircraftList/AircraftList'
-// import Info from './'
+import AircraftList from './screens/AircraftList/AircraftList';
+import AircraftDetails from './screens/AircraftDetails/AircraftDetails'
 import Home from './screens/Home/Home';
 
 import './App.css';
@@ -48,8 +47,8 @@ const [logging,setLogging]=useState(false);
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login setCurrentUser={setCurrentUser} currentUser={currentUser} setInput={setInput} input={input} setLogging={setLogging}></Login>} />
           <Route path="/aircraft" element={<AircraftList />} />
-          {/* <Route path="/userInfo" element={<Info currentUser={currentUser} />} /> */}
           <Route path="/signup" element={<SignUp currentUser={currentUser}/>}/>
+          <Route path="/reviews" element={<AircraftDetails />} />
         </Routes>
       </Layout>
     </div>
