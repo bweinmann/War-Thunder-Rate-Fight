@@ -1,25 +1,30 @@
-import React from 'react'
-// import { useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { loginUser } from '../../services/User'
 
 export default function Login(props) {
-  const {input, setInput, setLogging } = props;
+  const [input, setInput] = useState({
+    username: "",
+    password: "", 
+  }); 
 
   let navigate = useNavigate();
+  const { setCurrentUser } = props;
  
-  
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setLogging((prevlog)=>!prevlog);
+    let user = await loginUser(input);
+    setCurrentUser(user);
     navigate("/");
-  }
+  };
 
   const handleChange = (e) => {
     e.preventDefault();
-    const {name, value}=e.target
+    const {username, value}=e.target
       setInput((prevInput) => ({
       ...prevInput,
-      [name]: value
+      [username]: value
     }))
   }
 
