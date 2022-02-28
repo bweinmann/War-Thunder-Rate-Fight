@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     has_many :reviews
     has_many :comments
+    has_many :aircrafts
     has_secure_password
     
     validates :username, presence: true, uniqueness: true
