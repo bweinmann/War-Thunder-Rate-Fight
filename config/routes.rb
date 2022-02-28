@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :users do
     resources :reviews
     resources :comments
-    resources :aircrafts
   end
 
   resources :aircrafts do
@@ -15,7 +14,6 @@ Rails.application.routes.draw do
   end
 
   get '/aircraft', to: "aircrafts#get_all_aircrafts"
-  get '/user/user_id/aircraft', to: "aircrafts#get_user_aircrafts"
   get '/reviews', to: "reviews#get_all_reviews"
   get '/user/user_id/reviews', to:"reviews#get_user_reviews"
   get '/comments', to: "comments#get_all_comments"
