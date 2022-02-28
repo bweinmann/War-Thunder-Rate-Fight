@@ -13,7 +13,11 @@ Rails.application.routes.draw do
     resources :comments 
   end
 
+  get '/aircraft', to: "aircrafts#get_all_aircrafts"
+  get '/user/user_id/aircraft', to: "aircrafts#get_user_aircrafts"
+  get '/reviews', to: "reviews#get_all_reviews"
   get '/user/user_id/reviews', to:"reviews#get_user_reviews"
+  get 'comments', to: "comments#get_all_comments"
   get '/user/user_id/comments', to:"comments#get_user_comments"
 
   post '/auth/login', to: 'authentication#login'
