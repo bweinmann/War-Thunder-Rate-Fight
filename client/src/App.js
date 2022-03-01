@@ -41,7 +41,6 @@ const [logging,setLogging]=useState(false);
 
   return (
     <div className="App">
-      <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login setCurrentUser={setCurrentUser}></Login>} />
@@ -49,7 +48,6 @@ const [logging,setLogging]=useState(false);
           <Route path="/signup" element={<SignUp currentUser={currentUser}/>}/>
           {/* <Route path="/reviews" element={<AircraftDetails />} /> */}
         </Routes>
-      </Layout>
     </div>
   );
 }
