@@ -19,7 +19,6 @@ export default function AircraftList(props) {
     const fetchAircraft = async () => {
       const resp = await getAllAircraft();
       setAircrafts(resp);
-      console.log(resp);
       setSearchParams(resp);
     }
     fetchAircraft()
@@ -55,7 +54,6 @@ export default function AircraftList(props) {
 
   return (
     <div className="list">
-      <Layout>
         <Search onSubmit={handleSubmit} handleSearch={handleSearch} />
           <Sort onSubmit={handleSubmit} handleSort={handleSort} />
           <Routes>
@@ -67,7 +65,6 @@ export default function AircraftList(props) {
           } />
            <Route path=":id" element={<AircraftDetails aircrafts={aircrafts} />} />
         </Routes>
-      </Layout>
     </div>
   )
 }

@@ -2,13 +2,12 @@ import "./Home.css"
 import Layout from "../../components/Format/Layout/Layout"
 import {Link} from "react-router-dom"
 
-export default function HomePage(props) {
+export default function HomePage() {
   return (
     <div>
-      <Layout user={props.user}>
         <div className="home-container">
           <div className="home-container-left">
-            <Link to="/aircraft" style={{textDecoration: "none"}}>
+            <Link to="/aircrafts" style={{textDecoration: "none"}}>
               <button className="home-button-left">View Reviews</button>
             </Link>
           </div>
@@ -18,7 +17,6 @@ export default function HomePage(props) {
             </Link>
           </div>
         </div>
-      </Layout>
     </div>
   )
 }

@@ -2,10 +2,12 @@ import "./AircraftDetails.css"
 import Layout from "../../components/Format/Layout/Layout"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { getReview, createReview, deleteReview} from '../../services/reviews'
-import { getComment, createComment, deleteComment} from '../../services/comments' 
+import { getReview, createReview, deleteReview, updateReview} from '../../services/reviews'
+import { getComment, createComment, deleteComment, updateComment} from '../../services/comments' 
 import Review from '../../components/Reviews/Reviews'
 import CreateReview from '../../components/Forms/CreateReview/CreateReview'
+import DeleteReview from "../../components/Reviews/DeleteReview"
+// import EditReview from '../../components/Forms/EditReview/EditReview'
 import Comment from '../../components/Comments/Comments'
 import CreateComment from '../../components/Forms/CreateComment/CreateComment'
 
@@ -45,6 +47,11 @@ export default function AircraftDetail(props) {
     setToggle(prevToggle => !prevToggle)
   }
 
+  // const handleEditReview = async (id, formData) => {
+  //   await updateReview(id, formData)
+  //   setToggle(prevToggle => !prevToggle)
+  // }
+
   const handleCreateComment = async (formData) => {
     await createComment(id, formData)
     setToggle(prevToggle => !prevToggle)
@@ -55,6 +62,12 @@ export default function AircraftDetail(props) {
     setToggle(prevToggle => !prevToggle)
     }
 
+    // const handleEditComment = async (id, formData) => {
+    //   await updateComment(id, formData)
+    //   setToggle(prevToggle => !prevToggle)
+    //   navigate(`/aircrafts/${id}`)
+    // }
+
   return (
       <div>
         {
@@ -64,17 +77,21 @@ export default function AircraftDetail(props) {
               <h2>{aircraft.title}</h2>
               
               <CreateReview handleCreateReview={ handleCreateReview}/>
+              {/* <EditReview handleEditReview={ handleEditReview}/> */}
               <Review
                 currentUser={props.currentUser}
                 reviews={reviews}
                 handleDeleteReview={handleDeleteReview}
+                // handleEditReview={ handleEditReview}
               />
-
+    
               <CreateComment handleCreateComment={ handleCreateComment}/>
+              {/* <EditComment handleEditComment={ handleEditComment}/> */}
               <Comment
                 currentUser={props.currentUser}
                 comments={comments}
                 handleDeleteComment={handleDeleteComment}
+                // handleEditComment={ handleEditComment}
                 />
             </>
             :

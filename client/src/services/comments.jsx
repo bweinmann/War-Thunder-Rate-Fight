@@ -7,7 +7,7 @@ export const getComment = async (review_id) => {
 }
 
 export const createComment = async (review_id, commentData) => {
-  const resp = await api.review(`/reviews/${review_id}/comments`,{comment: commentData})
+  const resp = await api.post(`/reviews/${review_id}/comments`,{comment: commentData})
   return resp.data
 }
 

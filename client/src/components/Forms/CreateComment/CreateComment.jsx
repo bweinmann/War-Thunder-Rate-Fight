@@ -12,7 +12,7 @@ export default function CreateComment(props) {
         description
       }
       
-      props.handleCreateReview(review)
+      props.handleCreateComment(review)
     }}>
       <input type='text' value={description} onChange={(e) => setDescription(e.target.value)} />
       <button>Comment</button>

@@ -2,25 +2,28 @@ import "./Navbar.css"
 import {Link} from 'react-router-dom'
 
 
-const NavContainer = (props) => {
+const Navbar = (props) => {
 
+  const { currentUser, logout } = props
+  console.log(currentUser);
+  
       return (
         <div className="nav">
-          <h2>War Thunder Rate Fights</h2>
-          {props.currentUser ? (
+           {currentUser ?
             <>
-              <h3>Welcome, {props.currentUser.username}!</h3>
-              <button onClick={props.logout}>Log Out</button>
+                <h3>Welcome, {currentUser.username}!</h3>
+                <button onClick={logout}>Log Out</button>
             </>
-           ) : (
-            <div className="nav-links">
-              <Link to='/login'>Login</Link>
+               : 
+               <> 
+              <Link to="/"><h2>War Thunder Rate Fights</h2></Link>
+              <Link to='/login'>Log In</Link>      
               <Link to='/signup'>Sign Up</Link>
-            </div>
-           )}
-          <Link to='/aircrafts'>View Aircaft</Link>
+              <Link to='/aircrafts'>View Aircaft</Link>
+              </>
+              }
         </div>
       )
     }
 
-export default NavContainer
+export default Navbar

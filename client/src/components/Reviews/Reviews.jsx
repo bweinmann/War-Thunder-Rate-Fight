@@ -15,7 +15,7 @@ export default function Review(props) {
               props.currentUser?.id === review.user_id ?
                 <>
                   <button>Edit</button>
-                  <button onClick={() => props.handleReviewDelete(review.id)}>
+                  <button onClick={() => props.handleDeleteReview(review.id)}>
                     Delete
                   </button>
                 </>
