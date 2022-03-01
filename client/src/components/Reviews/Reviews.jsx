@@ -8,6 +8,7 @@ export default function Review(props) {
           <div key={review.id}>
             <h3>{review.title}</h3>
             <h4>Author: {review.user.username}</h4>
+            <h4>{review.score}</h4>
             <p>{review.description}</p>
 
             {

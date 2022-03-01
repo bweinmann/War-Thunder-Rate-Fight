@@ -1,4 +1,10 @@
 img {
   max-height: 40vh;
   max-width: 40vw;
+  background-color: #C9B576;
+}
+
+h4 {
+  color: #767A3A;
+  text-decoration: none; 
 }

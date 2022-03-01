@@ -1,8 +1,9 @@
 import "./AircraftDetails.css"
-// import Layout from "../../components/Format/Layout/Layout"
+import Layout from "../../components/Format/Layout/Layout"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { getReview, createReview, deleteReview} from '../../services/reviews' 
+import { getReview, createReview, deleteReview} from '../../services/reviews'
+// import { getComment, createComment, deleteComment} from '../../services/comments' 
 import Review from '../../components/Reviews/Reviews'
 import CreateReview from '../../components/Forms/CreateReview/CreateReview'
 
@@ -11,6 +12,7 @@ export default function AircraftDetail(props) {
   const [aircraft, setAircraft] = useState(null)
   const {id} = useParams()
   const [reviews, setReviews] = useState([])
+  const [toggle, setToggle] = useState(false)
   
   useEffect(() => {
     const foundAircraft = props.aircrafts.find(aircraft => {
@@ -36,6 +38,7 @@ export default function AircraftDetail(props) {
   }
   return (
       <div>
+        <Layout>
         {
           aircraft?.id ? 
             <>
@@ -50,8 +53,9 @@ export default function AircraftDetail(props) {
               />
             </>
             :
-            <h3>Sorry, no aircraft found.</h3>
+            <h3>No aircraft found</h3>
         }
+        </Layout>
       </div>
   )
 }

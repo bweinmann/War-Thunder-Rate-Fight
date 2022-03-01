@@ -6,7 +6,6 @@ export default function Comment(props) {
       {props.comments && 
         props.comments.map(comment => (
           <div key={comment.id}>
-            <h3>{comment.title}</h3>
             <h4>Author: {comment.user.username}</h4>
             <p>{comment.description}</p>
 

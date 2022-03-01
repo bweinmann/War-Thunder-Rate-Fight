@@ -1,22 +1,27 @@
 .nav {
-  background: linear-gradient(#e85b3b, rgb(248, 36, 93));
-  height: 6vh;
+  background: #3A3A3A;
+  height: 10vh;
   top: 0;
   width: 100vw;
   position: fixed;
-  text-align: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 5;
+  justify-content: space-between;
 }
 
 .nav a {
   text-decoration: none;
-  color: black;
+  color: #C9B576;
 }
 
-.nav h4 {
-  display: inline-block;
+.nav-links {
+  justify-content: space-between;
+}
+
+.nav h3 {
   height: 20px;
+  color: #C9B576;
+}
+
+.nav h2 {
+  color: #C9B576
 }

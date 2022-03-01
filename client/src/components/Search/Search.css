@@ -9,7 +9,7 @@
 .search-input {
     padding: 10px;
     margin: 40px;
-    border: none;
+    border: 2px solid black;
     width: 30vw;
     font-size: 1em;
     letter-spacing: 0.1px;

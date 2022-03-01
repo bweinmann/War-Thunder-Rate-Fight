@@ -7,6 +7,7 @@ import Layout from "../../components/Format/Layout/Layout"
 import Search from "../../components/Search/Search"
 import Sort from "../../components/Sort/Sort"
 import {asc, desc} from "../../utilities/Sort.js"
+import AircraftDetails from '../AircraftDetails/AircraftDetails'
 
 export default function AircraftList(props) {
   const [aircrafts, setAircrafts] = useState([])
@@ -53,7 +54,7 @@ export default function AircraftList(props) {
   const handleSubmit = (e) => e.preventDefault()
 
   return (
-    <div>
+    <div className="list">
       <Layout>
         <Search onSubmit={handleSubmit} handleSearch={handleSearch} />
           <Sort onSubmit={handleSubmit} handleSort={handleSort} />
@@ -64,6 +65,7 @@ export default function AircraftList(props) {
             currentUser={props.currentUser}
            />
           } />
+           <Route path=":id" element={<AircraftDetails aircrafts={aircrafts} />} />
         </Routes>
       </Layout>
     </div>
