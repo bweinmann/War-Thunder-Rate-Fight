@@ -1,12 +1,12 @@
 import { api } from './api-helper.js'
 
 
-export const getAllComments = async (review_id) => {
+export const getComment = async (review_id) => {
   const resp = await api.get(`/reviews/${review_id}/comments`)
   return resp.data
 }
 
-export const createComment = async (review_id,commentData) => {
+export const createComment = async (review_id, commentData) => {
   const resp = await api.review(`/reviews/${review_id}/comments`,{comment: commentData})
   return resp.data
 }
@@ -16,7 +16,7 @@ export const updateComment = async (review_id, comment_id, updateData) => {
   return resp.data
 }
 
-export const deleteComment = async (review_id,comment_id) => {
+export const deleteComment = async (review_id, comment_id) => {
   const resp = await api.delete(`/reviews/${review_id}/comments/${comment_id}`)
   return resp.data
 }

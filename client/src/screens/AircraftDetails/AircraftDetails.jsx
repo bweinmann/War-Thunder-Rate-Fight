@@ -3,15 +3,18 @@ import Layout from "../../components/Format/Layout/Layout"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { getReview, createReview, deleteReview} from '../../services/reviews'
-// import { getComment, createComment, deleteComment} from '../../services/comments' 
+import { getComment, createComment, deleteComment} from '../../services/comments' 
 import Review from '../../components/Reviews/Reviews'
 import CreateReview from '../../components/Forms/CreateReview/CreateReview'
+import Comment from '../../components/Comments/Comments'
+import CreateComment from '../../components/Forms/CreateComment/CreateComment'
 
 export default function AircraftDetail(props) {
 
   const [aircraft, setAircraft] = useState(null)
   const {id} = useParams()
   const [reviews, setReviews] = useState([])
+  const [comments, setComments] = useState([])
   const [toggle, setToggle] = useState(false)
   
   useEffect(() => {
@@ -22,8 +25,13 @@ export default function AircraftDetail(props) {
       const reviews = await getReview(id)
       setReviews(reviews)
     }
-    fetchReviews()
-    setAircraft(foundAircraft)
+    const fetchComments = async () => {
+      const comments = await getComment(id)
+      setComments(comments)
+    }
+    fetchReviews();
+    fetchComments();
+    setAircraft(foundAircraft);
 
   }, [id, props.aircrafts, toggle])
 
@@ -36,6 +44,17 @@ export default function AircraftDetail(props) {
     await deleteReview(id, review_id)
     setToggle(prevToggle => !prevToggle)
   }
+
+  const handleCreateComment = async (formData) => {
+    await createComment(id, formData)
+    setToggle(prevToggle => !prevToggle)
+    }
+    
+  const handleDeleteComment = async (comment_id) => {
+    await deleteComment(id, comment_id)
+    setToggle(prevToggle => !prevToggle)
+    }
+
   return (
       <div>
         {
@@ -50,6 +69,13 @@ export default function AircraftDetail(props) {
                 reviews={reviews}
                 handleDeleteReview={handleDeleteReview}
               />
+
+              <CreateComment handleCreateComment={ handleCreateComment}/>
+              <Comment
+                currentUser={props.currentUser}
+                comments={comments}
+                handleDeleteComment={handleDeleteComment}
+                />
             </>
             :
             <h3>No aircraft found</h3>
