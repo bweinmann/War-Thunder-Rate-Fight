@@ -4,7 +4,7 @@ const Footer = () => {
 
     return (  
         <div className="main-footer">
-          <h4 className="footer-header">Contact Us</h4>
+          <h4 className="footer-header">Contact</h4>
             <div className="row">
               <div className="col">
                 <ul className="list-unstyled">

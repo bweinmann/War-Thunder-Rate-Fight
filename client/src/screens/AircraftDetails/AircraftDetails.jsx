@@ -38,7 +38,6 @@ export default function AircraftDetail(props) {
   }
   return (
       <div>
-        <Layout>
         {
           aircraft?.id ? 
             <>
@@ -55,7 +54,6 @@ export default function AircraftDetail(props) {
             :
             <h3>No aircraft found</h3>
         }
-        </Layout>
       </div>
   )
 }
