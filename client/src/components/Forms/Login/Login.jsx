@@ -21,11 +21,7 @@ export default function Login(props) {
   return (
     <form onSubmit={async (e) => {
       e.preventDefault()
-      const user = {
-        username,
-        password
-      }
-      const res = await loginUser(user)
+      const res = await loginUser(loginData)
       props.setCurrentUser(res)
 
       navigate('/aircraft')

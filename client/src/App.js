@@ -5,7 +5,7 @@ import SignUp from './components/Forms/SignUp/SignUp';
 import Layout from './components/Format/Layout/Layout';
 import Login from './components/Forms/Login/Login';
 import AircraftList from './screens/AircraftList/AircraftList';
-import AircraftDetails from './screens/AircraftDetails/AircraftDetails'
+// import AircraftDetails from './screens/AircraftDetails/AircraftDetails'
 import Home from './screens/Home/Home';
 
 import './App.css';
@@ -26,7 +26,6 @@ const [logging,setLogging]=useState(false);
       const logIn = async () => {
         const logged = await loginUser(input);
         setCurrentUser(logged);
-        console.log(logged);
       }
       logIn()
     }
@@ -48,7 +47,7 @@ const [logging,setLogging]=useState(false);
           <Route path="/login" element={<Login setCurrentUser={setCurrentUser}></Login>} />
           <Route path="/aircraft" element={<AircraftList />} />
           <Route path="/signup" element={<SignUp currentUser={currentUser}/>}/>
-          <Route path="/reviews" element={<AircraftDetails />} />
+          {/* <Route path="/reviews" element={<AircraftDetails />} /> */}
         </Routes>
       </Layout>
     </div>

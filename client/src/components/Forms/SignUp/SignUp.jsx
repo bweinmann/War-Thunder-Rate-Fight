@@ -24,7 +24,7 @@ export default function Register(props) {
       const resp = await registerUser(user)
       props.setCurrentUser(resp)
 
-      navigate('/')
+      navigate('/aircraft')
 
     }}>
       <input type='text' onChange={(e) => setUsername(e.target.value) } value={username} />
