@@ -16,8 +16,9 @@ export default function AircraftList() {
 
   useEffect(() => {
     const fetchAircraft = async () => {
-      const res = await getAllAircraft();
-      setAircrafts(res)
+      const resp = await getAllAircraft();
+      setAircrafts(resp);
+      console.log(resp);
     }
     fetchAircraft()
   }, [])
