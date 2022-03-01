@@ -3,6 +3,7 @@ import "./AircraftDetails.css"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { getReview, createReview, deleteReview} from '../../services/reviews' 
+import Review from '../../components/Reviews/Reviews'
 
 export default function AircraftDetail(props) {
 
@@ -41,7 +42,7 @@ export default function AircraftDetail(props) {
               <h2>{aircraft.title}</h2>
               
               <CreateReview handleCreateReview={ handleCreateReview}/>
-              <Reviews
+              <Review
                 currentUser={props.currentUser}
                 reviews={reviews}
                 handleDeleteReview={handleDeleteReview}
