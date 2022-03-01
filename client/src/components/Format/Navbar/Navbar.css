@@ -1,23 +1,22 @@
-.navbar-brand {
-    margin-left: 30px;
-    font-size: 30px;
-  }
-  
-  .show {
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .nav-link {
-    margin: 20px;
-    color: red;
-  }
-  
-  .fixed-top {
+.nav {
+  background: linear-gradient(#e85b3b, rgb(248, 36, 93));
+  height: 6vh;
+  top: 0;
+  width: 100vw;
   position: fixed;
-  }
-  
-  a.link.nav-link:hover {
-      color:#C9B576; 
-      border-bottom: 1.2px solid #C9B576;
-  }
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.nav a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav h4 {
+  display: inline-block;
+  height: 20px;
+}

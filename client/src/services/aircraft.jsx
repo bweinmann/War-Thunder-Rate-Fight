@@ -1,6 +1,6 @@
 import { api } from './api-helper'
 
-export const getAllroducts = async () => {
+export const getAllAircraft = async () => {
   const resp = await api.get('/aircraft')
   return resp.data
 }

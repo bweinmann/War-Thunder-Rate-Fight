@@ -45,7 +45,7 @@ const [logging,setLogging]=useState(false);
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login setCurrentUser={setCurrentUser} currentUser={currentUser} setInput={setInput} input={input} setLogging={setLogging}></Login>} />
+          <Route path="/login" element={<Login setCurrentUser={setCurrentUser}></Login>} />
           <Route path="/aircraft" element={<AircraftList />} />
           <Route path="/signup" element={<SignUp currentUser={currentUser}/>}/>
           <Route path="/reviews" element={<AircraftDetails />} />
