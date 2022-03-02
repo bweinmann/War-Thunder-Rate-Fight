@@ -11,6 +11,7 @@ export const createReview = async (aircraft_id, reviewData) => {
 }
 
 export const updateReview = async (aircraft_id, review_id, updateData) => {
+  console.log(updateData)
   const resp = await api.put(`/aircrafts/${aircraft_id}/reviews/${review_id}`, {review: updateData})
   return resp.data
 }

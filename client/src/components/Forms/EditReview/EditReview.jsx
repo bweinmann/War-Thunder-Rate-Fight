@@ -2,17 +2,22 @@ import { useState, useEffect } from 'react'
 import {useParams} from 'react-router-dom'
 
 export default function EditReview(props) {
-
+  console.log(props)
+  
   const [title, setTitle] = useState('')
   const [score, setScore] = useState(0)
   const [description, setDescription] = useState('')
+  const { formupdate, setFormupdate } = props
   
   const {id} = useParams()
 
   useEffect(() => {
-    const foundReview = props.reviews.find(review => {
+    let foundReview
+    if (props?.reviewid) {foundReview = props.reviews.find(review => {
+      return review.id === parseInt(props.reviewid)})} 
+    else {foundReview = props.reviews.find(review => {
       return review.id === parseInt(id)
-    })
+    })}
     if (foundReview) {
       setTitle(foundReview.title)
       setScore(foundReview.score)
@@ -21,15 +26,20 @@ export default function EditReview(props) {
   }, [id, props.reviews ])
 
   return (
+
     <form onSubmit={(e) => {
       e.preventDefault()
+      console.log(title)
       const review = {
         title,
         score,
         description,
       }
-      props.handleEdit(id, review)
+      setFormupdate(review);
+      console.log(formupdate)
+      props.handleEditReview(id, review)
     }}>
+      
       <input
         type='text'
         onChange={(e) => setTitle(e.target.value)}
@@ -45,7 +55,7 @@ export default function EditReview(props) {
         onChange={(e) => setDescription(e.target.value)}
         value={description}
       />
-      <button>Edit</button>
+      <button>Confirm Changes</button>
     </form>
   )
 }

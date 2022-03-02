@@ -3,15 +3,17 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import Comment from '../../components/Comments/Comments'
 import CreateComment from '../Forms/CreateComment/CreateComment'
-
+import EditReview from '../Forms/EditReview/EditReview'
 
 
 export default function Review(props) {
-    console.log(props.currentUser)
-
+    
     const [comments, setComments] = useState([])
     const [review, setReview] = useState(null)
     const [toggle, setToggle] = useState(false)
+    const [aircraftid, setAircraftid] =useState([])
+    const [show, setShow] = useState(false)
+    const [formupdate, setFormupdate] = useState([])
     const {id} = useParams()
 
     useEffect(() => {
@@ -22,10 +24,11 @@ export default function Review(props) {
         const comments = await getComment(id)
         setComments(comments)
       }
-     
+      
       fetchComments();
       setReview(foundReview);
-  
+      setAircraftid(id);
+      console.log(formupdate)
     }, [id, props.reviews, toggle])
    
     const handleCreateComment = async (formData) => {
@@ -57,7 +60,14 @@ export default function Review(props) {
             {
               props.currentUser?.id === review.user_id ?
                 <>
-                  <button>Edit</button>
+                  <button onClick={(e) => {e.preventDefault();
+                setShow((prevShow) => !prevShow) }}>Edit Fields
+
+                 </button>
+                {show &&  <button onClick={() => props.handleEditReview(aircraftid,review?.id, formupdate)}>
+                    Sumbit
+                  </button> }
+                  {show && <EditReview reviews={props.reviews} setFormupdate={setFormupdate} formupdate={formupdate} reviewid={review.id}/>}
                   <button onClick={() => props.handleDeleteReview(review.id)}>
                     Delete
                   </button>
