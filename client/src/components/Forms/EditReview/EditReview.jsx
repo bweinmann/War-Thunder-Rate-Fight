@@ -3,7 +3,6 @@ import {useParams} from 'react-router-dom'
 import './EditReview.css'
 
 export default function EditReview(props) {
-  console.log(props)
   
   const [title, setTitle] = useState('')
   const [score, setScore] = useState(0)

@@ -1,4 +1,4 @@
-import { api } from './api-helper'
+import { api } from './apiconfig.js'
 
 export const getAllAircraft = async () => {
   const resp = await api.get('/aircrafts')

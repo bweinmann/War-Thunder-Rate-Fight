@@ -12,9 +12,10 @@ export default function Comment(props) {
     const {id} = useParams()
 
     useEffect(() => {
+      setComment(comment)
       const foundComment = props.comments.find(comment => {
-        return comment.id === parseInt(id),
-        setComment(comment)
+      return comment.id === parseInt(id)
+        
       })
 
       setComment(foundComment);

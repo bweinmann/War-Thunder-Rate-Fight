@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react'
 import {useParams} from 'react-router-dom'
 
-export default function EditComment(props) {
-  console.log(props)
-  
+export default function EditComment(props) { 
 
   const [description, setDescription] = useState('')
   const { formupdate, setFormupdate } = props
@@ -20,7 +18,7 @@ export default function EditComment(props) {
     if (foundComment) {
       setDescription(foundComment.description)
     }
-  }, [id, props.comments ])
+  }, [id, props.comments])
 
   return (
 

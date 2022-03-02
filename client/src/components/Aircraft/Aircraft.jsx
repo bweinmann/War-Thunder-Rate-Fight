@@ -9,7 +9,7 @@ export default function Aircraft(props) {
             {props.searchParams.map(aircraft => (
               <div className="aircraft-card">
               <Link className="aircraft-review-link" key={aircraft.id} to={`/aircrafts/${aircraft.id}`}>
-                <img src={aircraft.image_url} />
+                <img src={aircraft.image_url} alt="aircraft"/>
                 <h5>{aircraft.name}</h5>
               </Link>
               </div>

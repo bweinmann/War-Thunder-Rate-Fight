@@ -50,7 +50,7 @@ export default function AircraftDetail(props) {
           aircraft?.id ? 
             <>
               <div className="aircrafts-container">
-              <img src={aircraft.image_url} />
+              <img src={aircraft.image_url} alt="aircraft"/>
               <h2>{aircraft.title}</h2>
               </div>
               <CreateReview handleCreateReview={ handleCreateReview }/>

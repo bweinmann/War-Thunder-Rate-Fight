@@ -1,4 +1,4 @@
-import { api } from './api-helper'
+import { api } from './apiconfig.js'
 
 export const getReview = async (aircraft_id) => {
   const resp = await api.get(`/aircrafts/${aircraft_id}/reviews`)
