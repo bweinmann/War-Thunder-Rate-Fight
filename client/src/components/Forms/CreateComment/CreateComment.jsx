@@ -14,8 +14,10 @@ export default function CreateComment(props) {
       
       props.handleCreateComment(review)
     }}>
-      <input type='text' value={description} onChange={(e) => setDescription(e.target.value)} />
-      <button>Post Comment</button>
+      <div className="input">
+      <input placeholder="comment" type='text' value={description} onChange={(e) => setDescription(e.target.value)} />
+      <button>Post</button>
+      </div>
     </form>
   )
 }

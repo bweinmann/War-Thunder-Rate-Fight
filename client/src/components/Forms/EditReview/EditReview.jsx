@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import {useParams} from 'react-router-dom'
+import './EditReview.css'
 
 export default function EditReview(props) {
   console.log(props)
@@ -26,7 +27,7 @@ export default function EditReview(props) {
   }, [id, props.reviews ])
 
   return (
-
+    <div className="review-form-container">
     <form onSubmit={(e) => {
       e.preventDefault()
       console.log(title)
@@ -39,7 +40,7 @@ export default function EditReview(props) {
       console.log(formupdate)
       props.handleEditReview(id, review)
     }}>
-      
+      <div className="review-form">
       <input
         type='text'
         onChange={(e) => setTitle(e.target.value)}
@@ -56,6 +57,8 @@ export default function EditReview(props) {
         value={description}
       />
       <button>Confirm Changes</button>
+      </div>
     </form>
+    </div>
   )
 }

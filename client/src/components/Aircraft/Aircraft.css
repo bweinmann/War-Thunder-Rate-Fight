@@ -1,10 +1,51 @@
-img {
-  max-height: 40vh;
-  max-width: 40vw;
-  background-color: #C9B576;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap");
+
+.aircraft-card-container {
+  background-image: url("../../assets/aircraft-chrome-fuselage-1624061.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 2vh;
+  padding-bottom: 2vh;
+  width: 100vw;
 }
 
-h4 {
-  color: #767A3A;
-  text-decoration: none; 
+.aircraft-card {
+  background-color: #C9B576;
+  margin: 15px;
+  border: 2px solid #767A3A;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  max-height: 30vh;
+  max-width: 35vw;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+img {
+  max-height: 20vh;
+  max-width: 25vw;
+  margin: 1vh;
+  border: 2px solid #767A3A;
+}
+
+.aircraft-review-link {
+  color: black;
+  text-decoration: none;
+  font-size: 1vw;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.aircraft-card:hover {
+  transform: scale(1.03);
+  box-shadow: 10px 10px 5px grey;
+}
+
+.aircraft-review-link:hover {
+  color: white;
 }

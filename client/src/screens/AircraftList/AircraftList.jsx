@@ -3,7 +3,6 @@ import {useState, useEffect} from "react"
 import { Routes, Route } from 'react-router-dom'
 import Aircraft from '../../components/Aircraft/Aircraft'
 import { getAllAircraft } from '../../services/aircraft'
-import Layout from "../../components/Format/Layout/Layout"
 import Search from "../../components/Search/Search"
 import Sort from "../../components/Sort/Sort"
 import {asc, desc} from "../../utilities/Sort.js"
@@ -54,18 +53,21 @@ export default function AircraftList(props) {
   const handleSubmit = (e) => e.preventDefault()
 
   return (
-    <div className="list">
-        <Search onSubmit={handleSubmit} handleSearch={handleSearch} />
+    <div className="aircraft-list-container">
+         <div className="aircraft-list">
+         <Search onSubmit={handleSubmit} handleSearch={handleSearch} />
           <Sort onSubmit={handleSubmit} handleSort={handleSort} />
           <Routes>
             <Route path='/' element={
           <Aircraft
             aircrafts={aircrafts}
             currentUser={props.currentUser}
+            searchParams={searchParams}
            />
           } />
            <Route path=":id" element={<AircraftDetails currentUser={props.currentUser} aircrafts={aircrafts} />} />
         </Routes>
+        </div>
     </div>
   )
 }

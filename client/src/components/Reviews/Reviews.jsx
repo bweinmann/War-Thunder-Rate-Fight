@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom"
 import Comment from '../../components/Comments/Comments'
 import CreateComment from '../Forms/CreateComment/CreateComment'
 import EditReview from '../Forms/EditReview/EditReview'
+import './Reviews.css';
 
 
 export default function Review(props) {
@@ -47,17 +48,18 @@ export default function Review(props) {
     }
 
   return (
-    <div className="reviews">
+    <div className="review-card-container">
       {props.reviews && 
         props.reviews.map(review => (
-          <div key={review.id}>
+          <div className="review-card" key={review.id}>
             <h3>{review.title}</h3>
-            <h4>Author: {review.user.username}</h4>
-            <h4>{review.score}</h4>
+            <h5>Author: {review.user.username}</h5>
+            <h5>{review.score}</h5>
             <p>{review.description}</p>
             {
               props.currentUser?.id === review.user_id ?
                 <>
+                <div className="button-container">
 
                   <button onClick={(e) => {e.preventDefault();
                 setShow((prevShow) => !prevShow) }}>Edit Review
@@ -71,6 +73,7 @@ export default function Review(props) {
                   <button onClick={() => props.handleDeleteReview(review.id)}>
                     Delete
                   </button>
+                  </div>
                   <CreateComment handleCreateComment={ handleCreateComment}/>
                   </>
                   :

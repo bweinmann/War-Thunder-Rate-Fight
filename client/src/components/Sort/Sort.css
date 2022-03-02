@@ -1,0 +1,16 @@
+.sort-container {
+    background-color: #767A3A;
+    padding-bottom: 1vh;
+}
+
+.sort-label {
+    font-size: .8vw;
+    padding: 1vw;
+}
+
+.sort {
+    width: 65px;
+    height: 2.5vh;
+    max-width: 65px;
+    max-height: 30px
+}

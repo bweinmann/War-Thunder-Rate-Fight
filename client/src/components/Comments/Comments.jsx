@@ -24,27 +24,29 @@ export default function Comment(props) {
     }, [id, props.comments])
 
   return (
-    <div className="comments">
+    <div className="comments-container">
       {props.comments && 
         props.comments.map(comment => (
-          <div key={comment.id}>
+          <div className="comments" key={comment.id}>
             <h4>Author: {comment.user.username}</h4>
             <p>{comment.description}</p>
 
             {
               props.currentUser?.id === comment.user_id ?
                 <>
-                  <button onClick={(e) => {e.preventDefault();
+                 <div className="button-container">
+                  <button className="comment-button" onClick={(e) => {e.preventDefault();
                 setShow((prevShow) => !prevShow) }}>Edit Comment
 
                  </button>
-                {show &&  <button onClick={() => props.handleEditComment(reviewid,comment?.id, formupdate)}>
+                {show &&  <button className="comment-button" onClick={() => props.handleEditComment(reviewid,comment?.id, formupdate)}>
                     Sumbit
                   </button> }
                   {show && <EditComment comments={props.comments} setFormupdate={setFormupdate} formupdate={formupdate} commentid={comment.id}/>}
-                  <button onClick={() => props.handleDeleteComment(comment.id)}>
+                  <button className="comment-button" onClick={() => props.handleDeleteComment(comment.id)}>
                     Delete
                   </button>
+                  </div>
                 </>
                 :
                 null

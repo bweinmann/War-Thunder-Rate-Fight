@@ -2,23 +2,24 @@
     display: flex;
     width: 100vw;
     height: 100vh;
-    /* background-color: red; */
+    background-color: red;
+    overflow: hidden;
 }
 
  .home-button-left {
     background-image: url("../../assets/55962f244a134.jpg");
- }
+}
 
  .home-button-right {
     background-image: url("../../assets/3bd9d4751e34ca1fb117e11aa19388f9.jpg");
- }
+}
 
 .home-button-right, .home-button-left {
     background-repeat:no-repeat;
     background-size: cover;
     background-position: center;
     color: black;
-	-webkit-text-stroke: .5px black;
+	-webkit-text-stroke: .2px black;
 	-webkit-text-fill-color: white;
     cursor: pointer;
     font-size: 4vw;

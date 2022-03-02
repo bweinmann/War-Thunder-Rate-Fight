@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #767A3A;
 }
 
 .search-input {
@@ -11,8 +12,10 @@
     margin: 40px;
     border: 2px solid black;
     width: 30vw;
-    font-size: 1em;
+    font-size: .8vw;
     letter-spacing: 0.1px;
+    font-family: 'Roboto Mono', monospace;
+    height: 1.5vh;
 }
 
 .search-input::placeholder {

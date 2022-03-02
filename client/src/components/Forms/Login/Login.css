@@ -1,0 +1,25 @@
+.user-form-container {
+    margin-top: 20vh;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    position: relative;
+    background-color: #767A3A;
+}
+
+.user-form {
+    
+    width: 40vw;
+    background-color: rgb(253, 253, 253);
+    font-size: 2vh;
+    border: 2px solid rgb(122, 102, 102);
+    color: rgb(122, 102, 102);
+    padding: 2vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.user-form input {
+    margin: 1vh;
+    width: 15vw;
+    background-color: tan;
+}

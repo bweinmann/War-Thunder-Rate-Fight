@@ -1,0 +1,21 @@
+.review-card-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%
+}
+
+.review-card {
+    margin: 2vh;
+    background-color: #767A3A;
+    width: 50vw;
+}
+
+.button-container {
+    max-width: 450px;
+    font-size: 1vh;
+    color: rgb(122, 102, 102);
+    margin: 0 auto;
+    padding: 1vh;
+    height: auto;
+}
