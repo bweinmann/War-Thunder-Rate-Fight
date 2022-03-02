@@ -10,6 +10,7 @@ import {asc, desc} from "../../utilities/Sort.js"
 import AircraftDetails from '../AircraftDetails/AircraftDetails'
 
 export default function AircraftList(props) {
+  console.log(props.currentUser)
   const [aircrafts, setAircrafts] = useState([])
   const [searchParams, setSearchParams] = useState([])
   const [sort, setSort] = useState(false)
@@ -63,7 +64,7 @@ export default function AircraftList(props) {
             currentUser={props.currentUser}
            />
           } />
-           <Route path=":id" element={<AircraftDetails aircrafts={aircrafts} />} />
+           <Route path=":id" element={<AircraftDetails currentUser={props.currentUser} aircrafts={aircrafts} />} />
         </Routes>
     </div>
   )

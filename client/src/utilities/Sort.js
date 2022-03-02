@@ -9,5 +9,5 @@ const sortInput = key =>
     return 0
   }
 
-export const asc = arr => arr.sort(sortInput('location'))
-export const desc = arr => arr.sort(sortInput('location')).reverse()
+export const asc = arr => arr.sort(sortInput('name'))
+export const desc = arr => arr.sort(sortInput('name')).reverse()

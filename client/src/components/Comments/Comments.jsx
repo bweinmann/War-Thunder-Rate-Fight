@@ -1,8 +1,8 @@
-import React from 'react'
+import './Comments.css'
 
 export default function Comment(props) {
   return (
-    <div>
+    <div className="comments">
       {props.comments && 
         props.comments.map(comment => (
           <div key={comment.id}>

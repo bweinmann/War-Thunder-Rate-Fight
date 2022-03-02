@@ -7,6 +7,7 @@ export default function CreateReview(props) {
   const [score, setScore] = useState(0)
 
   return (
+    <div className="review-form">
     <form onSubmit={(e) => {
       e.preventDefault()
 
@@ -23,5 +24,6 @@ export default function CreateReview(props) {
       <input type='number' value={score} onChange={(e) => setScore(e.target.valueAsNumber)}/>
       <button>Post Review</button>
     </form>
+    </div>
   )
 }

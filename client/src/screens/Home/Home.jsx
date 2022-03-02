@@ -1,5 +1,4 @@
 import "./Home.css"
-import Layout from "../../components/Format/Layout/Layout"
 import {Link} from "react-router-dom"
 
 export default function HomePage() {
