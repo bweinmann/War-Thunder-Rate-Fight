@@ -4,7 +4,7 @@ import {useParams} from 'react-router-dom'
 export default function EditComment(props) {
   console.log(props)
   
-  const [title, setTitle] = useState('')
+
   const [description, setDescription] = useState('')
   const { formupdate, setFormupdate } = props
   
@@ -18,7 +18,6 @@ export default function EditComment(props) {
       return comment.id === parseInt(id)
     })}
     if (foundComment) {
-      setTitle(foundComment.title)
       setDescription(foundComment.description)
     }
   }, [id, props.comments ])
@@ -29,26 +28,19 @@ export default function EditComment(props) {
       e.preventDefault()
      
       const comment = {
-        title,
-        score,
         description,
       }
       setFormupdate(comment);
       console.log(formupdate)
-      props.handleEditcomment(id, comment)
-    }}>
+      props.handleEditComment(id, comment)
       
-      <input
-        type='text'
-        onChange={(e) => setTitle(e.target.value)}
-        value={title}
-      />
+    }}>
       <input
         type='text'
         onChange={(e) => setDescription(e.target.value)}
         value={description}
       />
-      <button>Edit</button>
+      <button>Confirm Changes</button>
     </form>
   )
 }

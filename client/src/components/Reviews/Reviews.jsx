@@ -28,7 +28,7 @@ export default function Review(props) {
       fetchComments();
       setReview(foundReview);
       setAircraftid(id);
-      console.log(formupdate)
+
     }, [id, props.reviews, toggle])
    
     const handleCreateComment = async (formData) => {
@@ -41,14 +41,13 @@ export default function Review(props) {
       setToggle(prevToggle => !prevToggle)
       }
 
-    // const handleEditComment = async (id, formData) => {
-    //   await updateComment(id, formData)
-    //   setToggle(prevToggle => !prevToggle)
-    //   navigate(`/reviews/${id}`)
-    // }
+    const handleEditComment = async (id, formData) => {
+      await updateComment(id, formData)
+      setToggle(prevToggle => !prevToggle)
+    }
 
   return (
-    <div>
+    <div className="reviews">
       {props.reviews && 
         props.reviews.map(review => (
           <div key={review.id}>
@@ -56,31 +55,33 @@ export default function Review(props) {
             <h4>Author: {review.user.username}</h4>
             <h4>{review.score}</h4>
             <p>{review.description}</p>
-
             {
               props.currentUser?.id === review.user_id ?
                 <>
-                  <button onClick={(e) => {e.preventDefault();
-                setShow((prevShow) => !prevShow) }}>Edit Fields
 
+                  <button onClick={(e) => {e.preventDefault();
+                setShow((prevShow) => !prevShow) }}>Edit Review
                  </button>
+
                 {show &&  <button onClick={() => props.handleEditReview(aircraftid,review?.id, formupdate)}>
                     Sumbit
                   </button> }
+
                   {show && <EditReview reviews={props.reviews} setFormupdate={setFormupdate} formupdate={formupdate} reviewid={review.id}/>}
                   <button onClick={() => props.handleDeleteReview(review.id)}>
                     Delete
                   </button>
                   <CreateComment handleCreateComment={ handleCreateComment}/>
-                  <Comment 
+                  </>
+                  :
+                  null
+                }
+                <Comment 
                   handleDeleteComment={handleDeleteComment}
+                  handleEditComment={ handleEditComment}
                   currentUser={props.currentUser} 
                   comments={comments}
-                  /> 
-                </>
-                :
-                null
-            }
+              /> 
           </div>
         ))
       }

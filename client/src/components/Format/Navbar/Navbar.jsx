@@ -13,7 +13,7 @@ const Navbar = (props) => {
             <>
                 <Link to="/"><h2>War Thunder Rate Fights</h2></Link>
                 <h3>Welcome, {currentUser.username}!</h3>
-                <button onClick={logout}>Log Out</button>
+                <Link to="/" onClick={logout}>Log Out</Link>
             </>
                : 
                <> 
