@@ -19,8 +19,8 @@ Rails.application.routes.draw do
   get '/comments', to: "comments#get_all_comments"
   get '/user/user_id/comments', to:"comments#get_user_comments"
 
-  post '/auth/login', to: 'authentication#login'
-  get '/auth/verify', to: 'authentication#verify'
+  post '/auth/login', to: 'authentications#login'
+  get '/auth/verify', to: 'authentications#verify'
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

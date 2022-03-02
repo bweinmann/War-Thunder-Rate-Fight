@@ -4,13 +4,13 @@
 }
 
 .sort-label {
-    font-size: .8vw;
+    font-size: 1vw;
     padding: 1vw;
+    font-weight: bold;
 }
 
 .sort {
-    width: 65px;
-    height: 2.5vh;
-    max-width: 65px;
-    max-height: 30px
+    max-width: 12vw;
+    max-height: 3vh;
+    font-size: 1vw;
 }

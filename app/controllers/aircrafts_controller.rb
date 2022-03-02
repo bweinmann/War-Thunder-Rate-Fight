@@ -10,7 +10,11 @@ class AircraftsController < ApplicationController
 
   # GET /aircrafts/1
   def show
-    render json: @aircraft
+    render json: @aircrafts, include: :reviews
+  end
+
+  def get_all_aircrafts
+    @aircrafts = Aircraft.all
   end
 
   # POST /aircrafts

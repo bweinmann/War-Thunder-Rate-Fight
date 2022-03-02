@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
-  before_action :set_review, only: %i[ show update destroy ]
-  before_action :authorize_request, only: [:create, :update, :destroy, :get_user_comments]
+  before_action :set_comment, only: %i[ show update destroy ]
+  before_action :authorize_request, only: [:create, :update, :destroy]
+  # if getting user comments is required: :get_user_comments
 
   # GET /comments
   def index
@@ -12,12 +13,13 @@ class CommentsController < ApplicationController
 
   def get_all_comments
     @comments = Comment.all
+    render json: @comments
   end
 
-  def get_user_comments
-    @user = User.find(params[user_id])
-    render json: @user.comments
-  end
+  # def get_user_comments
+  #   @user = User.find(params[user_id])
+  #   render json: @user.comments
+  # end
 
   # GET /comments/1
   def show

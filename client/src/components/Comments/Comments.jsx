@@ -19,7 +19,6 @@ export default function Comment(props) {
 
       setComment(foundComment);
       setReviewid(id);
-      console.log(formupdate)
       
     }, [id, props.comments])
 

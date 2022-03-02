@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: %i[ show update destroy ]
-  before_action :authorize_request, only: [:create, :update, :destroy, :get_user_reviews]
-
+  before_action :authorize_request, only: [:create, :update, :destroy ]
+  # if getting user reviews is necessary: :get_user_reviews
+  
   # GET /reviews
   def index
     @aircraft = Aircraft.find(params[:aircraft_id])
@@ -12,12 +13,13 @@ class ReviewsController < ApplicationController
 
   def get_all_reviews
     @reviews = Review.all
+    render json: @reviews
   end
 
-  def get_user_reviews
-    @user = User.find(params[user_id])
-    render json: @user.reviews
-  end
+  # def get_user_reviews
+  #   @user = User.find(params[user_id])
+  #   render json: @user.reviews
+  # end
 
   # GET /reviews/1
   def show

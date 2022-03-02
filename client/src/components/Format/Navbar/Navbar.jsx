@@ -5,8 +5,7 @@ import {Link} from 'react-router-dom'
 const Navbar = (props) => {
 
   const { currentUser, logout } = props
-  console.log(currentUser);
-  
+   
       return (
         <div className="nav">
            {currentUser ?

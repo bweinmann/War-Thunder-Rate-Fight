@@ -32,6 +32,7 @@
     -webkit-transition: all .5s;
     transition: all .5s;
     height: 100vh;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .home-button-right:hover, .home-button-left:hover {
